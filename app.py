@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import jsonify
+from matplotlib.style import context
 import requests
 import pickle
 import numpy as np
@@ -45,10 +45,29 @@ def predict():
             Transmission_Mannual=0
         prediction=model.predict([[Present_Price,Kms_Driven2,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual]])
         output=round(prediction[0],2)
+
+        if (output<5):
+            image = "less_than_5"
+        elif (output>=5 and output <10):
+            image= "5-10"
+        elif (output>=10 and output <20):
+            image = "10-20"
+        elif (output>=20 and output <50):
+            image = "20-50"
+        elif (output>=50):
+            image= "above_50"
+
+        image_url = "../static/images/{}.jpg".format(image)
+
         if output<0:
-            return render_template('index.html',prediction_texts="Sorry you cannot sell this car")
+            prediction_text = "Sorry You can not sell this car."
         else:
-            return render_template('index.html',prediction_text="You Can Sell The Car at {} lakhs".format(output))
+            prediction_text="Your Car is worth for around {} lakhs. You can sell this car at this Price.".format(output)
+
+        print(prediction_text)
+        print(image_url)
+
+        return render_template('predict.html',prediction_text=prediction_text,image_url=image_url)
     else:
         return render_template('index.html')
 

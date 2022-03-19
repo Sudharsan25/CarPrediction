@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: large;
+  font-weight: bold;
+}
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background {
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all ease-in 1s;
+}
+
+.form {
+  position: relative;
+  text-align: center;
+}
+
+.form h2 {
+  font-size: larger;
+  font-weight: bolder;
+  margin: 0.5rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.inputs input {
+  margin-top: 0.5rem;
+  width: 300px;
+  border-radius: 10px;
+  height: 20px;
+  text-align: center;
+}
+
+.inputs select {
+  margin-top: 0.5rem;
+  width: 300px;
+  border-radius: 10px;
+  height: 20px;
+  text-align: center;
+}
+
+#sub {
+  margin: 1rem;
+  width: 200px;
+  color: whitesmoke;
+  background-color: cadetblue;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.predict_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.predict_wrap img {
+  height: 30%;
+  width: 30%;
+  border-radius: 20px;
+  transition: all 1s ease-in;
+}
+
+.predict_wrap h3 {
+  margin-top: 1rem;
+  width: 50%;
+}
