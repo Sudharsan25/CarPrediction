@@ -5,6 +5,7 @@ colorama==0.4.4
 cycler==0.11.0
 Flask==2.0.3
 fonttools==4.30.0
+gunicorn==20.1.0
 idna==3.3
 importlib-metadata==4.11.3
 itsdangerous==2.1.1
